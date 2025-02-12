@@ -132,7 +132,7 @@ cards (this order number is put on the AFTO 350) and attach this to the job. Lea
 awaiting arrival of parts.
 
 ### Use Case Diagram
-
+![Use Case Diagram] (https://github.com/cheezmaestro/CIDM6330/blob/main/Assignment%201/UseCaseDiagram.png)
 
 ## Features
 *coming soon*
