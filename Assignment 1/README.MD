@@ -53,6 +53,9 @@ The end goal is a hybrid web application, built on opensource components, which 
 *Coming soon*
 
 ## Use Cases
+#### Use Case Diagram
+![Use Case Diagram](UseCaseDiagram.jpg)
+
 ### Use Case 1 – On-Equipment Repair w/Stock
 An aircraft technician notices a flat tire on an aircraft (acft) while doing a pre-flight
 inspection. They need to replace the wheel assembly with a good one from the
@@ -70,25 +73,6 @@ part &amp; serial numbers of the assemblies being removed/replaced (R2) in paper
 ***Electronically***, they must create a job to document the discrepancy (flat tire), document the R2
 part numbers &amp; serial numbers on the acft, and generate a job for the wheel &amp; tire shop for the
 repair of the unserviceable assembly. The job is closed once finished.
-
-### Use Case 2 – Off-Equipment Repair w/Stock
-A W&amp;T shop technician receives an unserviceable wheel assembly from the flightline and
-trades it for a serviceable assembly from their stock. The backshop then repairs the
-unserviceable assembly and puts it back in stock.
-
-**Actors:** Backshop technician  
-**Goal:** Receive a repair job, receive unserviceable part into shop inventory, document the repair (tire removal/replacement with in-shop replacement tire),
- & return part to serviceable status in shop inventory.  
-
-**Process:**  
-***Physically***, they receive wheel assembly and document it in their logbook. They give the
-flightline a serviceable assembly and also document that in their logbook. The technician tears
-down the unserviceable assembly and replaces the rubber tire with a new one. The assembly is
-rebuilt and the now serviceable assembly is placed in shop stock. The AFTO 350 tag that
-accompanied the unserviceable part is documented with the job number and details of the
-repair.  
-***Electronically***, the technician finds the “off equipment” job that was “cut” to them from the
-flightline job. They document the repair and close the job.
 
 ### Use Case 3 – On-Equipment Repair w/out Stock
 Pilot has reported a fault with their radar system. Flightline avionics removes a panel to
@@ -112,6 +96,28 @@ unserviceable LRU. They query the on-station stock and find there are no replace
 available. They then place an order with supply against their job for a replacement LRU. They
 leave the job open awaiting arrival of the replacement.
 
+#### Use Cases 1 & 3
+![Use Cases 1 & 3](UseCase1and3.jpg)
+
+### Use Case 2 – Off-Equipment Repair w/Stock
+A W&amp;T shop technician receives an unserviceable wheel assembly from the flightline and
+trades it for a serviceable assembly from their stock. The backshop then repairs the
+unserviceable assembly and puts it back in stock.
+
+**Actors:** Backshop technician  
+**Goal:** Receive a repair job, receive unserviceable part into shop inventory, document the repair (tire removal/replacement with in-shop replacement tire),
+ & return part to serviceable status in shop inventory.  
+
+**Process:**  
+***Physically***, they receive wheel assembly and document it in their logbook. They give the
+flightline a serviceable assembly and also document that in their logbook. The technician tears
+down the unserviceable assembly and replaces the rubber tire with a new one. The assembly is
+rebuilt and the now serviceable assembly is placed in shop stock. The AFTO 350 tag that
+accompanied the unserviceable part is documented with the job number and details of the
+repair.  
+***Electronically***, the technician finds the “off equipment” job that was “cut” to them from the
+flightline job. They document the repair and close the job.
+
 ### Use Case 4 – Off-Equipment Repair w/out Stock
 Unserviceable LRU is delivered to avionics backshop. The internal components are
 found to be damaged. No spare components are available so they must be placed on
@@ -131,8 +137,9 @@ their inspection and findings on this job. They create an order to supply for th
 cards (this order number is put on the AFTO 350) and attach this to the job. Leave job open
 awaiting arrival of parts.
 
-### Use Case Diagram
-![Use Case Diagram] (UseCaseDiagram.png)
+### Use Cases 2 & 4
+![Use Cases 2 & 4](UseCase2and4.jpg)
+
 
 ## Features
 *coming soon*
@@ -147,7 +154,19 @@ awaiting arrival of parts.
 # Specifications
 
 ## Concepts
-*coming soon*
+There are many moving parts in a maintenance organization so, for the purposes of this exploration,
+we're limiting our scope to the main components. There should be room for adding complexity as needed.
+
+The core concepts of aircraft maintenance documentation are knowing the safety of the vehicle for flight.
+Everything hinges around this. At its core, this means that the organization responsible for the craft want to know
+what the status is of the vehicle and all of its installed parts.
+This is accomplished by, 1. tracking all (most - not parts deemed immaterial - e.g. washers) parts installed
+in a configuration tree, and 2. tracking work performed against any and all of these parts via jobs.
+
+The classes below are a simple subset which should allow the accomplishment of aforesaid goals.
+
+### Classes
+![Class Diagram](ClassDiagram.jpg)
 
 ## UX Notes
 *coming soon*
